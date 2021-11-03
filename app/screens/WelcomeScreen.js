@@ -6,6 +6,7 @@ import {
     Text,
     View
 } from 'react-native';
+import colors from '../config/colors';
 
 const WelcomeScreen = (props) => {
     return (
@@ -41,17 +42,17 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: {
-        color: 'yellow',
+        color: colors.primary,
     },
     loginBtn: {
         width: '100%',
         height: 70,
-        backgroundColor: 'red',
+        backgroundColor: colors.primary,
     },
     registerBtn: {
         width: '100%',
         height: 70,
-        backgroundColor: 'blue',
+        backgroundColor: colors.secondary,
     },
 })
 
