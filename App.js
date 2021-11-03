@@ -1,13 +1,30 @@
 import React from 'react';
-import ViewImageScreen from './app/screens/ViewImageScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
 
   return (
-    // <WelcomeScreen />
-    <ViewImageScreen />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Welcome'
+          component={WelcomeScreen}
+          // options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen
+          name='Image'
+          component={ViewImageScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
-}
+};
+
+export default App;
 

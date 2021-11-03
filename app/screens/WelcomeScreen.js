@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Button,
     Image,
     ImageBackground,
     StyleSheet,
@@ -8,7 +9,7 @@ import {
 } from 'react-native';
 import colors from '../config/colors';
 
-const WelcomeScreen = (props) => {
+const WelcomeScreen = ({ navigation }) => {
     return (
         <ImageBackground
             source={require('../assets/andrew-haimerl-andrewnef-iRE9XAFmnPw-unsplash.jpg')}
@@ -20,7 +21,12 @@ const WelcomeScreen = (props) => {
                 />
                 <Text style={styles.text}>Sell what you don't need</Text>
             </View>
-            <View style={styles.loginBtn}></View>
+            <View style={styles.loginBtn}>
+                <Button
+                    title='View an image'
+                    onPress={() => navigation.navigate('Image')}
+                />
+            </View>
             <View style={styles.registerBtn}></View>
         </ImageBackground>
     );
